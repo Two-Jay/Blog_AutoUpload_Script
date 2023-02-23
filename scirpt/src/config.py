@@ -24,4 +24,4 @@ def get(section, key):
 def set(section, key, value):
     return Config.set(section, key, value)
 
-__all__ = ['initConfig']
+__all__ = ['initConfig', 'get', 'set']
