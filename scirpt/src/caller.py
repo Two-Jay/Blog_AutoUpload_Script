@@ -23,4 +23,4 @@ def createCaller(config):
 def call(caller):
     caller.call()
 
-__all__ = ['createCaller']
+__all__ = ['createCaller', 'call']
