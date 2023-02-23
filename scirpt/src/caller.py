@@ -13,10 +13,14 @@ class openai_caller(caller):
         print(self.__config.get('OPENAI', 'API_KEY'))
 
 
-def createCaller(api_type, config):
+def createCaller(config):
+    api_type = config.get('API', 'API_TYPE')
     if api_type == 'openai':
         return openai_caller(config)
     else:
         raise Exception('Unknown caller')
+
+def call(caller):
+    caller.call()
 
 __all__ = ['createCaller']
