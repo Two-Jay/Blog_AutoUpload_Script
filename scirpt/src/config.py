@@ -15,13 +15,6 @@ class Config:
     def set(section, key, value):
         Config.__default[section][key] = value
 
-# path = os.path.dirname(os.getcwd())
-# config = configparser.ConfigParser()
-# config.read(path + '/config.ini')
-
-# print(path)
-# print(config['API']['OPEN_AI_API_KEY'])
-
 def initConfig():
     return Config()
 

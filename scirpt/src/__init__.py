@@ -1,7 +1,10 @@
-import config
+import config as Config
+import caller as Caller
 
 def main():
-    print(config.get('API', 'OPEN_AI_API_KEY'))
+    config = Config.initConfig()
+    caller = Caller.createCaller(config.get("API", "API_TYPE"), config)
+    caller.call()
 
 if __name__ == '__main__':
     main()
