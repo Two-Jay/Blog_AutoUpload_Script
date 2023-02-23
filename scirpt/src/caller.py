@@ -5,18 +5,11 @@ class caller(ABC):
     def call(self, config):
         pass
 
-class openai_caller(caller):
-    def __init__(self, config):
-        self.__config = config
-
-    def call(self):
-        print(self.__config.get('OPENAI', 'API_KEY'))
-
-
 def createCaller(config):
     api_type = config.get('API', 'API_TYPE')
     if api_type == 'openai':
-        return openai_caller(config)
+        import open_api_caller
+        return open_api_caller.openai_caller(config)
     else:
         raise Exception('Unknown caller')
 
